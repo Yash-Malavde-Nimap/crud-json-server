@@ -1,0 +1,132 @@
+{
+  "employees": [
+    {
+      "id": "8d20",
+      "first_name": "yash",
+      "last_name": "malavde",
+      "gender": "Male",
+      "status": "Active",
+      "email": "yash@gmail.com"
+    },
+    {
+      "id": "ac85",
+      "first_name": "yash12345",
+      "last_name": "asngjoansfjogn",
+      "gender": "Male",
+      "status": "On Leave",
+      "email": "yash.malavde@nimapinfotech.in"
+    },
+    {
+      "id": "1",
+      "first_name": "John",
+      "last_name": "Doe",
+      "email": "johndoe@abc.com",
+      "gender": "Male",
+      "status": "Terminated"
+    },
+    {
+      "id": "2",
+      "first_name": "Jane",
+      "last_name": "Doe",
+      "email": "janedoe@abc.com",
+      "gender": "Female",
+      "status": "New"
+    },
+    {
+      "id": "3",
+      "first_name": "Alice",
+      "last_name": "Doe",
+      "email": "alicedoe@abc.com",
+      "gender": "Female",
+      "status": "Leaving"
+    },
+    {
+      "id": "4",
+      "first_name": "Bob",
+      "last_name": "Doe",
+      "email": "bobdoe@abc.com",
+      "gender": "Male",
+      "status": "Active"
+    },
+    {
+      "id": "5",
+      "first_name": "John",
+      "last_name": "Doe",
+      "email": "johndoe@abc.com",
+      "gender": "Male",
+      "status": "Terminated"
+    },
+    {
+      "id": "6",
+      "first_name": "Jane",
+      "last_name": "Doe",
+      "email": "janedoe@abc.com",
+      "gender": "Female",
+      "status": "New"
+    },
+    {
+      "id": "7",
+      "first_name": "Alice",
+      "last_name": "Doe",
+      "email": "alicedoe@abc.com",
+      "gender": "Female",
+      "status": "Leaving"
+    },
+    {
+      "id": "8",
+      "first_name": "Bob",
+      "last_name": "Doe",
+      "email": "bobdoe@abc.com",
+      "gender": "Male",
+      "status": "Active"
+    },
+    {
+      "id": "9",
+      "first_name": "Eve",
+      "last_name": "Green",
+      "email": "evegreen@abc.com",
+      "gender": "Female",
+      "status": "Active"
+    },
+    {
+      "id": "10",
+      "first_name": "Paul",
+      "last_name": "White",
+      "email": "paulwhite@abc.com",
+      "gender": "Male",
+      "status": "New"
+    },
+    {
+      "id": "11",
+      "first_name": "Anna",
+      "last_name": "Blue",
+      "email": "annablue@abc.com",
+      "gender": "Female",
+      "status": "Terminated"
+    },
+    {
+      "id": "12",
+      "first_name": "Chris",
+      "last_name": "Black",
+      "email": "chrisblack@abc.com",
+      "gender": "Male",
+      "status": "Leaving"
+    },
+    {
+      "id": "13",
+      "first_name": "Emily",
+      "last_name": "Pink",
+      "email": "emilypink@abc.com",
+      "gender": "Female",
+      "status": "Active"
+    },
+    {
+      "id": "14",
+      "first_name": "David",
+      "last_name": "Gray",
+      "email": "davidgray@abc.com",
+      "gender": "Male",
+      "status": "New"
+    }
+  ]
+}
