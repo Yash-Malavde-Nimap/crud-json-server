@@ -1,9 +1,12 @@
 import axios from "axios";
 
+// AXIOS INSTANCE
 const API = axios.create({
   baseURL: "http://localhost:3000",
 });
 
+
+// GET ALL THE EMPLOYEES DATA
 export const getEmployees = () => {
   try {
     return API.get("/employees");
@@ -12,6 +15,8 @@ export const getEmployees = () => {
   }
 };
 
+
+// GET EMPLOYEE DATA FROM ID
 export const getEmployeeByID = (id) => {
   try {
     return API.get(`/employees/${id}`);
@@ -20,6 +25,8 @@ export const getEmployeeByID = (id) => {
   }
 };
 
+
+// POST A NEW EMPLOYEE
 export const postEmployee = (payload) => {
   try {
     return API.post(`/employees`, payload);
@@ -28,9 +35,21 @@ export const postEmployee = (payload) => {
   }
 };
 
+
+// DELETE EXISTING EMPLOYEE
 export const deleteEmployee = (id) => {
   try {
     return API.delete(`/employees/${id}`);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
+// EDIT AN EMPLOYEES DETAILS
+export const putEmployee = (id,payload) => {
+  try {
+    return API.put(`/employees/${id}`, payload);
   } catch (error) {
     console.log(error);
   }

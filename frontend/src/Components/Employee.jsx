@@ -14,6 +14,7 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { Button, TextField } from "@mui/material";
 import { AddDialog } from "./AddDialog.jsx";
+import { EditDialog } from "./EditDialog.jsx";
 
 const Employee = () => {
   const [employees, setEmployees] = useState([]);
@@ -67,9 +68,8 @@ const Employee = () => {
         justifyContent: "start",
         alignItems: "center",
         gap: "20px",
-        // padding: "40px",
         padding: "30px 0px",
-        backgroundColor: "#e0e0e04d", // Light background color for the container
+        backgroundColor: "#e0e0e04d",
         borderRadius: "8px",
         scrollBehavior: "smooth",
         position: "relative",
@@ -80,14 +80,13 @@ const Employee = () => {
         style={{
           display: "flex",
           justifyContent: "center",
+          flexWrap:'wrap',
           alignItems: "center",
           gap: "10px",
-        //   background: "red",
           width: "600px",
         }}
       >
         <TextField
-          // label="Enter Employee ID"
           value={id}
           onChange={(e) => setID(e.target.value)}
           variant="standard"
@@ -95,7 +94,7 @@ const Employee = () => {
           fullWidth
           style={{
             padding: "16px 20px",
-            backgroundColor: "#c6c6c6", // White background for the input field
+            backgroundColor: "#c6c6c6",
             borderRadius: "8px",
             maxWidth: "300px",
             position: "sticky",
@@ -103,11 +102,7 @@ const Employee = () => {
           }}
         />
 
-        {/* <Button style={{ width: "180px" }} variant="contained">
-        {" "}
-        + Add Employee
-      </Button> */}
-
+        {/* THIS IS A BUTTON THAT TOGGLES THE MODAL/DIALOGBOX */}
         <AddDialog />
       </div>
 
@@ -171,12 +166,13 @@ const Employee = () => {
                       gap: "4px",
                     }}
                   >
-                    <Button
+                    {/* <Button
                       variant="contained"
                       style={{ fontSize: "10px", background: "blue" }}
                     >
                       Edit
-                    </Button>
+                    </Button> */}
+                    <EditDialog emp={emp} employees={employees}/>
                     <Button
                       variant="contained"
                       style={{ fontSize: "10px", background: "red" }}

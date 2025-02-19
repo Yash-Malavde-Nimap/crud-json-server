@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 
@@ -15,21 +16,16 @@ import {
   Select,
   TextField,
 } from "@mui/material";
-import { postEmployee } from "../utils/APIServices";
+import { putEmployee } from "../utils/APIServices";
 
 const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export function AddDialog() {
+export function EditDialog({ emp, employees }) {
+  const { id } = emp;
   const [open, setOpen] = useState(false);
-  const [formData, setFormData] = useState({
-    first_name: "",
-    last_name: "",
-    gender: "",
-    status: "",
-    email: "",
-  });
+  const [formData, setFormData] = useState(emp);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -47,23 +43,38 @@ export function AddDialog() {
     });
   };
 
-  const handleSubmit = async () => {
-    // Handle form submission logic here
+  const handleSubmit = async (i) => {
+    const payload = employees
+      .map((e) =>
+        e.id === i
+          ? {
+              ...e,
+              first_name: formData.first_name,
+              last_name: formData.last_name,
+              email: formData.email,
+              status: formData.status,
+              gender: formData.gender,
+            }
+          : e
+      );
+
+
+    //   console.log(payload[0])
 
     try {
       if (formData.email.length != "") {
-        await postEmployee(formData);
+        await putEmployee(id, payload[0]);
       }
       window.location.reload();
     } catch (error) {
       console.log(error);
     }
   };
-  
+
   return (
     <>
-      <Button variant="outlined" onClick={handleClickOpen} style={{}}>
-        Add Employee
+      <Button variant="outlined" onClick={handleClickOpen}>
+        Edit
       </Button>
       <Dialog
         fullScreen
@@ -82,16 +93,16 @@ export function AddDialog() {
               {/* <CloseIcon /> */}X
             </IconButton>
             <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
-              Add Employee
+              Edit Employee
             </Typography>
             <Button
               autoFocus
               color="inherit"
               onClick={() => {
-                formData.email != "" ? handleSubmit() : handleClose();
+                formData.email != "" ? handleSubmit(id) : handleClose();
               }}
             >
-              Add
+              Edit
             </Button>
           </Toolbar>
         </AppBar>
